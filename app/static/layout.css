@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(202, 172, 231);
+    text-align: center;
+    position: flex;
+}
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10vh;
+    font-style: italic;
+    border: purple dashed 5px;
+    border-radius: 20px;
+}
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(75, 9, 119);
+}
+#botao{
+    background-color: purple ;
+    color: aliceblue;
+    font-size: medium;
+    border-radius: 10px;
+}
+::placeholder{
+    text-align: center;
+}
+ul{
+    background-color: rgb(75, 9, 119);
+    border-radius: 10px;
+    padding: auto;
+    width: 300px;
+    margin: auto;
+    color: aliceblue;
+    list-style-type: circle;
+    list-style-position: outside;
+    text-align: left;
+}
+hr{
+   border: purple 2px solid;
+}

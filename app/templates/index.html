@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD livros</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='layout.css') }}">
+</head>
+<body>
+    <h1>-- Crud livros --</h1>
+    <h2>Adicione um livro:</h2>
+    <form action="/criar" method="post">
+        <input type="text" name="nome" placeholder="Digite o nome do livro" required><br> 
+        <h2>Adicione o autor:</h2>
+        <input type="text" name="autor" placeholder="Digite o nome do autor" required><br><br>
+        <input id="botao" type="submit" value="inserir">
+        <h2>Adicione o número de páginas</h2>
+        <input type="text" name="paginas" placeholder="Digite quantas páginas" required><br><br>
+        <input id="botao" type="submit" value="inserir">
+        <h2>Adicione a sinopse</h2>
+        <input type="text" name="sinopse" placeholder="Digite a sinopse do livro:" required><br><br>
+        <input id="botao" type="submit" value="inserir">
+    </form>
+
+    <h2>Livros:</h2>
+    <ul>
+
+        {% for livro in livros %}
+            <li>Título: {{livro['titulo']}} 
+                | Autor: {{livro['autor']}}
+                - Qtd páginas: {{livro['paginas']}}  
+                - Sinopse: {{livro['sinopse']}}
+            </li>
+        {% endfor %}
+
+    </ul>
+
+<hr>
+
+
+    <h2>Altere o número de páginas:</h2>
+    <form action="/alterar" method="post">
+        <input type="text" name="old_pg" placeholder="antiga" required>
+        <input type="text" name="new_pg" placeholder="atual" required><br><br>
+        <input id="botao" type="submit" value="alterar">
+    </form>    
+
+    <h2>Atualizar sinopse:</h2>
+    <form action="/alterar" method="post">
+        <input type="text" name="sinopseant" placeholder="sinopse atual" required>
+        <input type="text" name="sinopsenova" placeholder="nova sinopse" required><br><br>
+        <input id="botao" type="submit" value="alterar">
+    </form>
+
+    <h2>Atualizar livro:</h2>
+    <form action="/alterar" method="post">
+        <input type="text" name="old_titulo" placeholder="Nome atual" required>
+        <input type="text" name="new_titulo" placeholder="Novo nome" required><br>
+        <h2>Atualizar autor:</h2>
+        <input type="text" name="old_autor" placeholder="Nome atual" required>
+        <input type="text" name="new_autor" placeholder="Novo nome" required><br><br>
+        <input id="botao" type="submit" value="alterar">
+    </form>
+
+<hr>
+    <h2>Apagar livro:</h2>
+    <form action="/apagar" method="post">
+        <input type="text" name="nome" placeholder="Nome do livro" required><br><br>
+        <input id="botao" type="submit" value="Apagar">
+    </form>
+    <br>
+
+    <a href="/segpag"><button id="botao">Próxima página</button></a>
+</body>
+</html>
