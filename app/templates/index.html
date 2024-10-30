@@ -13,10 +13,8 @@
         <input type="text" name="nome" placeholder="Digite o nome do livro" required><br> 
         <h2>Adicione o autor:</h2>
         <input type="text" name="autor" placeholder="Digite o nome do autor" required><br><br>
-        <input id="botao" type="submit" value="inserir">
         <h2>Adicione o número de páginas</h2>
         <input type="text" name="paginas" placeholder="Digite quantas páginas" required><br><br>
-        <input id="botao" type="submit" value="inserir">
         <h2>Adicione a sinopse</h2>
         <input type="text" name="sinopse" placeholder="Digite a sinopse do livro:" required><br><br>
         <input id="botao" type="submit" value="inserir">
@@ -36,24 +34,22 @@
     </ul>
 
 <hr>
-
-
     <h2>Altere o número de páginas:</h2>
-    <form action="/alterar" method="post">
+    <form action="/alterar" method="put">
         <input type="text" name="old_pg" placeholder="antiga" required>
         <input type="text" name="new_pg" placeholder="atual" required><br><br>
         <input id="botao" type="submit" value="alterar">
     </form>    
 
     <h2>Atualizar sinopse:</h2>
-    <form action="/alterar" method="post">
+    <form action="/alterar" method="put">
         <input type="text" name="sinopseant" placeholder="sinopse atual" required>
         <input type="text" name="sinopsenova" placeholder="nova sinopse" required><br><br>
         <input id="botao" type="submit" value="alterar">
     </form>
 
     <h2>Atualizar livro:</h2>
-    <form action="/alterar" method="post">
+    <form action="/alterar" method="put">
         <input type="text" name="old_titulo" placeholder="Nome atual" required>
         <input type="text" name="new_titulo" placeholder="Novo nome" required><br>
         <h2>Atualizar autor:</h2>
@@ -64,12 +60,11 @@
 
 <hr>
     <h2>Apagar livro:</h2>
-    <form action="/apagar" method="post">
+    <form action="/apagar" method="delete">
         <input type="text" name="nome" placeholder="Nome do livro" required><br><br>
         <input id="botao" type="submit" value="Apagar">
     </form>
     <br>
 
-    <a href="/segpag"><button id="botao">Próxima página</button></a>
 </body>
 </html>
